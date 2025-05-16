@@ -18,8 +18,6 @@ Block-Box is a secure, web-based file storage application that prioritizes user 
 
 ## Tech Stack
 
----
-
 ### Backend
 - **Python 3.10+** – Core backend logic
 - **Flask** – Web framework for routing and session handling
@@ -27,20 +25,14 @@ Block-Box is a secure, web-based file storage application that prioritizes user 
 - **Custom Blockchain** – Stores file metadata (IPFS hash, filename)
 - **IPFS Client** – Uploads/retrieves files via local IPFS node
 
----
-
 ### Frontend
 - **HTML5 + Jinja2** – Dynamic page rendering
 - **CSS3** – UI styling (`styles.css`)
-- **JavaScript** – Optional enhancements and validation
-
----
+- **JavaScript** – Matrix Theme
 
 ### Storage
 - **IPFS** – Decentralized file storage 
 - **Local File System** – Temp storage for uploads/downloads
-
----
 
 ### Security
 - **Fernet Encryption** – Local encryption/decryption
@@ -67,32 +59,32 @@ Block-Box is a secure, web-based file storage application that prioritizes user 
    - Click **New**, add the full path to the folder containing `ipfs.exe` (e.g., `C:\ipfs`), then click **OK** on all dialogs.
 
 3. **Verify IPFS installation:**  
-   Open **Command Prompt** and run: ipfs version
+   Open **Command Prompt** and run: ```ipfs version```
    You should see: `ipfs version 0.7.0`.
 
 4. **Initialize IPFS (only once):**  
-   ipfs init
+   ```ipfs init```
 
 5. **Clone the repository and install dependencies:**  
-   git clone https://github.com/AdityaKarun/Block-Box.git
-   cd Block-Box
+   ```git clone https://github.com/AdityaKarun/Block-Box.git```
+   ```cd Block-Box```
 
 6. **Create and activate a Python virtual environment:**
-   python -m venv venv
-   .\venv\Scripts\activate
+   ```python -m venv venv```
+   ```.\venv\Scripts\activate```
    
 7. **Install Python dependencies:**
-   pip install -r requirements.txt
+   ```pip install -r requirements.txt```
 
 8. **Start IPFS daemon:**  
-   ipfs daemon
+   ```ipfs daemon```
    Keep this window open; the daemon must be running whenever you use the app.
 
 9. **Run the Flask application:**
-    python app.py
+    ```python app.py```
 
 10. **To access the application, open your browser and go to:**
-    http://localhost:5000
+    ```http://localhost:5000```
 
 ---
 
