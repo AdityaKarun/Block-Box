@@ -80,6 +80,7 @@ Block-Box is a secure, web-based file storage application that prioritizes user 
    ```
    
 4. **Set up a virtual environment:**
+   
    **Windows:**
    ```
    python -m venv venv
@@ -92,14 +93,14 @@ Block-Box is a secure, web-based file storage application that prioritizes user 
    source venv/bin/activate
    ```
    
-6. **Install Python dependencies:** <pre>```pip install -r requirements.txt```</pre>
+5. **Install Python dependencies:** <pre>```pip install -r requirements.txt```</pre>
 
-7. **Start IPFS daemon:** <pre>```ipfs daemon```</pre>
+6. **Start IPFS daemon:** <pre>```ipfs daemon```</pre>
    Keep this terminal open; the daemon must be running whenever you use the app.
 
-8. **Run the Flask application:** <pre>```python app.py```</pre>
+7. **Run the Flask application:** <pre>```python app.py```</pre>
 
-9. **To access the application, open your browser and go to:** <pre>```http://localhost:5000```</pre>
+8. **To access the application, open your browser and go to:** <pre>```http://localhost:5000```</pre>
 
 ## Usage
 
