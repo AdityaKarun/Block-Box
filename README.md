@@ -9,7 +9,7 @@ Block-Box is a secure, web-based file storage application that prioritizes user 
 - **Decentralized Storage:** Encrypted files are uploaded to IPFS, providing tamper-resistant and distributed storage.
 - **Blockchain Metadata:** File metadata (such as IPFS hash and filename) is stored on a custom blockchain for integrity and traceability.
 - **Personal Secret Key:** Each user receives a unique secret key, which acts as Two-Factor Authentication (2FA) when attempting to download an uploaded file.
-- **File Download:** Users can securely download and decrypt their files using their secret key and the IPFS hash.
+- **File Download:** Users can securely download and decrypt their files using the IPFS hash and their secret key.
 - **File Size & Type Restrictions:** Only files up to 25 MB and of allowed types (`.txt`, `.pdf`, `.png`, `.jpg`, `.jpeg`) can be uploaded.
 
 ## Screenshots
@@ -61,33 +61,45 @@ Block-Box is a secure, web-based file storage application that prioritizes user 
    - Extract to a directory (e.g., C:\ipfs)
    - Add folder to System PATH via: Start → Environment Variables → Path → Edit → New → Add C:\ipfs
    - To verify installation, run: ```ipfs version```
-
-   **Linux/macOS:** <pre>```wget https://dist.ipfs.tech/go-ipfs/v0.7.0/go-ipfs_v0.7.0_linux-amd64.tar.gz```
-   ```tar -xvzf go-ipfs_v0.7.0_linux-amd64.tar.gz```
-   ```cd go-ipfs```
-   ```sudo bash install.sh```
-   ```ipfs version```</pre>
+  
+   **Linux/macOS:**
+   ```
+   wget https://dist.ipfs.tech/go-ipfs/v0.7.0/go-ipfs_v0.7.0_linux-amd64.tar.gz
+   tar -xvzf go-ipfs_v0.7.0_linux-amd64.tar.gz
+   cd go-ipfs
+   sudo bash install.sh
+   ipfs version
+   ```
 
 2. **Initialize IPFS (intialization required only once):**  <pre>```ipfs init```</pre>
 
-3. **Clone the repository and install dependencies:**  <pre>```git clone https://github.com/AdityaKarun/Block-Box.git```
-   ```cd Block-Box```</pre>
-
-4. **Set up a virtual environment:**
-   **Windows:** <pre>```python -m venv venv```
-   ```venv\Scripts\activate```</pre>
-
-   **Linux/macOS:** <pre>```python3 -m venv venv
-   source venv/bin/activate```</pre>
+3. **Clone the repository and install dependencies:**
+   ```
+   git clone https://github.com/AdityaKarun/Block-Box.git
+   cd Block-Box
+   ```
    
-5. **Install Python dependencies:** <pre>```pip install -r requirements.txt```</pre>
+4. **Set up a virtual environment:**
+   **Windows:**
+   ```
+   python -m venv venv
+   venv\Scripts\activate
+   ```
 
-6. **Start IPFS daemon:** <pre>```ipfs daemon```</pre>
-   Keep this window open; the daemon must be running whenever you use the app.
+   **Linux/macOS:**
+   ```
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+   
+6. **Install Python dependencies:** <pre>```pip install -r requirements.txt```</pre>
 
-7. **Run the Flask application:** <pre>```python app.py```</pre>
+7. **Start IPFS daemon:** <pre>```ipfs daemon```</pre>
+   Keep this terminal open; the daemon must be running whenever you use the app.
 
-8. **To access the application, open your browser and go to:** <pre>```http://localhost:5000```</pre>
+8. **Run the Flask application:** <pre>```python app.py```</pre>
+
+9. **To access the application, open your browser and go to:** <pre>```http://localhost:5000```</pre>
 
 ## Usage
 
