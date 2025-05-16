@@ -12,6 +12,17 @@ Block-Box is a secure, web-based file storage application that prioritizes user 
 - **File Download:** Users can securely download and decrypt their files using their secret key and the IPFS hash.
 - **File Size & Type Restrictions:** Only files up to 25 MB and of allowed types (`.txt`, `.pdf`, `.png`, `.jpg`, `.jpeg`) can be uploaded.
 
+## Screenshots
+
+### Login/Signup Page
+![Login/Signup Page](assets/img_1.png)
+
+### Secret Key Generation
+![Secret Key Generation](assets/img_2.png)
+
+### Upload/Download Interface
+![Upload/Download Interface](assets/img_3.png)
+
 ## Tech Stack
 
 ### Backend
@@ -34,7 +45,7 @@ Block-Box is a secure, web-based file storage application that prioritizes user 
 - **Fernet Encryption** – Local encryption/decryption
 - **Flask Sessions** – Manages authenticated user sessions
 
-## Installation (Windows)
+## Installation
 
 ### Prerequisites
 - Python 3.10+
@@ -43,34 +54,40 @@ Block-Box is a secure, web-based file storage application that prioritizes user 
 
 ### Steps
 
-1. **Download and install IPFS (go-ipfs v0.7.0):**  
-   Download the Windows package from: [https://dist.ipfs.tech/go-ipfs/v0.7.0/](https://dist.ipfs.tech/go-ipfs/v0.7.0/)  
-   Extract the downloaded ZIP file to a folder of your choice (e.g., `C:\ipfs`).
+1. **Install IPFS:**
+   
+   **Windows:**
+   - Download from: [https://dist.ipfs.tech/go-ipfs/v0.7.0/](https://dist.ipfs.tech/go-ipfs/v0.7.0/)
+   - Extract to a directory (e.g., C:\ipfs)
+   - Add folder to System PATH via: Start → Environment Variables → Path → Edit → New → Add C:\ipfs
+   - To verify installation, run: ```ipfs version```
 
-2. **Add IPFS to your system PATH:**  
-   - Open **Start** and search for **Environment Variables** → **Edit the system environment variables**.  
-   - Click **Environment Variables**, select **Path** under System variables, and click **Edit**.  
-   - Click **New**, add the full path to the folder containing `ipfs.exe` (e.g., `C:\ipfs`), then click **OK** on all dialogs.
+   **Linux/macOS:** <pre>```wget https://dist.ipfs.tech/go-ipfs/v0.7.0/go-ipfs_v0.7.0_linux-amd64.tar.gz```
+   ```tar -xvzf go-ipfs_v0.7.0_linux-amd64.tar.gz```
+   ```cd go-ipfs```
+   ```sudo bash install.sh```
+   ```ipfs version```</pre>
 
-3. **To verify IPFS installation, run :** <pre>```ipfs version```</pre>
-   You should see: `ipfs version 0.7.0`.
+2. **Initialize IPFS (intialization required only once):**  <pre>```ipfs init```</pre>
 
-4. **Initialize IPFS (intialization required only once):**  <pre>```ipfs init```</pre>
-
-5. **Clone the repository and install dependencies:**  <pre>```git clone https://github.com/AdityaKarun/Block-Box.git```
+3. **Clone the repository and install dependencies:**  <pre>```git clone https://github.com/AdityaKarun/Block-Box.git```
    ```cd Block-Box```</pre>
 
-7. **Create and activate a Python virtual environment:** <pre>```python -m venv venv```
+4. **Set up a virtual environment:**
+   **Windows:** <pre>```python -m venv venv```
    ```venv\Scripts\activate```</pre>
-   
-9. **Install Python dependencies:** <pre>```pip install -r requirements.txt```</pre>
 
-10. **Start IPFS daemon:** <pre>```ipfs daemon```</pre>
+   **Linux/macOS:** <pre>```python3 -m venv venv
+   source venv/bin/activate```</pre>
+   
+5. **Install Python dependencies:** <pre>```pip install -r requirements.txt```</pre>
+
+6. **Start IPFS daemon:** <pre>```ipfs daemon```</pre>
    Keep this window open; the daemon must be running whenever you use the app.
 
-11. **Run the Flask application:** <pre>```python app.py```</pre>
+7. **Run the Flask application:** <pre>```python app.py```</pre>
 
-12. **To access the application, open your browser and go to:** <pre>```http://localhost:5000```</pre>
+8. **To access the application, open your browser and go to:** <pre>```http://localhost:5000```</pre>
 
 ## Usage
 
@@ -89,7 +106,7 @@ Block-Box is a secure, web-based file storage application that prioritizes user 
 
 ### 4. Download a File
 - Enter the IPFS hash and your secret key.
-- If valid, the file is downloaded from IPFS, decrypted, and served to you.
+- If file hash and secret key are valid, the file is downloaded from IPFS, decrypted, and served to you.
 
 ## API Endpoints
 
