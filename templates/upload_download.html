@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload & Download - Block-Box</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Matrix rain background -->
+    <canvas id="matrixRain" class="matrix-background"></canvas>
+
+    <div class="container">
+        <h1>Welcome, {{ session['username'] }}</h1>
+    
+        <div class="upload-download-wrapper">
+            <div class="upload-section">
+                <h2>Upload a File</h2>
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" class="file-input" required>
+                    <button type="submit" class="btn">Upload</button>
+                </form>
+            </div>
+    
+            <div class="download-section">
+                <h2>Download a File</h2>
+                <form method="POST" action="{{ url_for('download_file') }}">
+                    <input type="text" id="ipfs_hash" placeholder="Enter IPFS Hash" name="ipfs_hash" required>
+                    
+                    <input type="password" id="secret_key" placeholder="Enter Secret Key" name="secret_key" required style="display: none;">
+                
+                    <button type="submit">Download</button>
+                </form>
+            </div>
+        </div>
+        <br>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="error">
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+    
+        <div class="logout-link">
+            <a href="/logout" class="btn">Logout</a>
+        </div>
+    </div>    
+
+    {% include 'matrix_script.html' %}
+
+    <script>
+        document.getElementById('ipfs_hash').addEventListener('focus', function() {
+            const secretKeyInput = document.getElementById('secret_key');
+            secretKeyInput.style.display = 'inline'; // Show the secret key input
+        });
+    </script>
+</body>
+</html>
