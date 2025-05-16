@@ -52,33 +52,25 @@ Block-Box is a secure, web-based file storage application that prioritizes user 
    - Click **Environment Variables**, select **Path** under System variables, and click **Edit**.  
    - Click **New**, add the full path to the folder containing `ipfs.exe` (e.g., `C:\ipfs`), then click **OK** on all dialogs.
 
-3. **Verify IPFS installation:**  
-   Open **Command Prompt** and run: <pre>```ipfs version```</pre>
+3. **To verify IPFS installation, run :** <pre>```ipfs version```</pre>
    You should see: `ipfs version 0.7.0`.
 
-4. **Initialize IPFS (only once):**  
-   <pre>```ipfs init```</pre>
+4. **Initialize IPFS (intialization required only once):**  <pre>```ipfs init```</pre>
 
-5. **Clone the repository and install dependencies:**  
-   <pre>```git clone https://github.com/AdityaKarun/Block-Box.git```
+5. **Clone the repository and install dependencies:**  <pre>```git clone https://github.com/AdityaKarun/Block-Box.git```
    ```cd Block-Box```</pre>
 
-6. **Create and activate a Python virtual environment:**
-   <pre>```python -m venv venv```
-   ```.\venv\Scripts\activate```</pre>
+7. **Create and activate a Python virtual environment:** <pre>```python -m venv venv```
+   ```venv\Scripts\activate```</pre>
    
-7. **Install Python dependencies:**
-   <pre>```pip install -r requirements.txt```</pre>
+9. **Install Python dependencies:** <pre>```pip install -r requirements.txt```</pre>
 
-8. **Start IPFS daemon:**  
-   <pre>```ipfs daemon```</pre>
+10. **Start IPFS daemon:** <pre>```ipfs daemon```</pre>
    Keep this window open; the daemon must be running whenever you use the app.
 
-9. **Run the Flask application:**
-    <pre>```python app.py```</pre>
+11. **Run the Flask application:** <pre>```python app.py```</pre>
 
-10. **To access the application, open your browser and go to:**
-    <pre>```http://localhost:5000```</pre>
+12. **To access the application, open your browser and go to:** <pre>```http://localhost:5000```</pre>
 
 ## Usage
 
