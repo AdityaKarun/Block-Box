@@ -2,8 +2,6 @@
 
 Block-Box is a secure, web-based file storage application that prioritizes user privacy and data integrity. It features a robust authentication system where each registered user is issued a unique secret key, which also functions as a second factor of authentication during file downloads. Files are encrypted locally using symmetric encryption (Fernet) before being uploaded to the InterPlanetary File System (IPFS), leveraging decentralized storage for improved reliability and resistance to tampering. To maintain a verifiable record of all uploads, the platform stores file metadata—such as the IPFS hash and filename—on a custom blockchain, creating an immutable audit trail. Users can later retrieve and decrypt their files securely using their secret key and the associated IPFS hash.
 
----
-
 ## Features
 
 - **User Registration & Login:** Implements a simple in-memory authentication system for managing user access.
@@ -13,8 +11,6 @@ Block-Box is a secure, web-based file storage application that prioritizes user 
 - **Personal Secret Key:** Each user receives a unique secret key, which acts as Two-Factor Authentication (2FA) when attempting to download an uploaded file.
 - **File Download:** Users can securely download and decrypt their files using their secret key and the IPFS hash.
 - **File Size & Type Restrictions:** Only files up to 25 MB and of allowed types (`.txt`, `.pdf`, `.png`, `.jpg`, `.jpeg`) can be uploaded.
-
----
 
 ## Tech Stack
 
@@ -38,8 +34,6 @@ Block-Box is a secure, web-based file storage application that prioritizes user 
 - **Fernet Encryption** – Local encryption/decryption
 - **Flask Sessions** – Manages authenticated user sessions
 
----
-
 ## Installation (Windows)
 
 ### Prerequisites
@@ -59,34 +53,32 @@ Block-Box is a secure, web-based file storage application that prioritizes user 
    - Click **New**, add the full path to the folder containing `ipfs.exe` (e.g., `C:\ipfs`), then click **OK** on all dialogs.
 
 3. **Verify IPFS installation:**  
-   Open **Command Prompt** and run: ```ipfs version```
+   Open **Command Prompt** and run: <pre>```ipfs version```</pre>
    You should see: `ipfs version 0.7.0`.
 
 4. **Initialize IPFS (only once):**  
-   ```ipfs init```
+   <pre>```ipfs init```</pre>
 
 5. **Clone the repository and install dependencies:**  
-   ```git clone https://github.com/AdityaKarun/Block-Box.git```
-   ```cd Block-Box```
+   <pre>```git clone https://github.com/AdityaKarun/Block-Box.git```
+   ```cd Block-Box```</pre>
 
 6. **Create and activate a Python virtual environment:**
-   ```python -m venv venv```
-   ```.\venv\Scripts\activate```
+   <pre>```python -m venv venv```
+   ```.\venv\Scripts\activate```</pre>
    
 7. **Install Python dependencies:**
-   ```pip install -r requirements.txt```
+   <pre>```pip install -r requirements.txt```</pre>
 
 8. **Start IPFS daemon:**  
-   ```ipfs daemon```
+   <pre>```ipfs daemon```</pre>
    Keep this window open; the daemon must be running whenever you use the app.
 
 9. **Run the Flask application:**
-    ```python app.py```
+    <pre>```python app.py```</pre>
 
 10. **To access the application, open your browser and go to:**
-    ```http://localhost:5000```
-
----
+    <pre>```http://localhost:5000```</pre>
 
 ## Usage
 
@@ -107,8 +99,6 @@ Block-Box is a secure, web-based file storage application that prioritizes user 
 - Enter the IPFS hash and your secret key.
 - If valid, the file is downloaded from IPFS, decrypted, and served to you.
 
----
-
 ## API Endpoints
 
 - `/` — Home page
@@ -119,7 +109,6 @@ Block-Box is a secure, web-based file storage application that prioritizes user 
 - `/download` — Download a file (POST, requires login)
 - `/logout` — Log out
 
----
 
 ## License
 
