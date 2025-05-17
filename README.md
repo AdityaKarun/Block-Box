@@ -121,17 +121,8 @@ Block-Box is a secure, web-based file storage application that prioritizes user 
 - Enter the IPFS hash and your secret key.
 - If file hash and secret key are valid, the file is downloaded from IPFS, decrypted, and served to you.
 
-## API Endpoints
+## Feedback & Support
 
-- `/` — Home page
-- `/login` — Login page
-- `/signup` — Signup page
-- `/upload_download` — Upload/download dashboard (requires login)
-- `/upload` — Upload a file (POST, requires login)
-- `/download` — Download a file (POST, requires login)
-- `/logout` — Log out
+If you find any bugs, have feature requests, or want to contribute, feel free to open an issue or submit a pull request. Your feedback helps improve Block-Box!
 
-
-## License
-
-MIT License. See [LICENSE](go-ipfs/LICENSE) for details.
+Thanks for checking out the project!
